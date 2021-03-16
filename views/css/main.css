@@ -1,0 +1,699 @@
+*{
+	padding: 0px;
+	margin: 0px;
+	box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+  margin: 0;
+}
+
+#pageContainer {
+	height: 100%;
+	width: 100%;
+}
+
+#navbarContainer{
+	padding-top: 5px;
+	height: 7.5%;
+}
+
+#contentContainer{
+	height: 92.5%;
+}
+
+.test_modal {
+	background-color: rgba(0, 0, 0, 0.8);
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	display: none;
+	justify-content: center;
+	align-items: center;
+}
+
+.test_modal_contents {
+	height: 300px;
+	width: 500px;
+	background-color: white;
+	text-align: center;
+	padding: 20px;
+	position: relative;
+	border-radius: 4px;
+}
+
+.closeButton {
+	position: absolute;
+	top: 0;
+	right: 10px;
+	font-size: 30px;
+	color: #333;
+	transform: rotate(45deg);
+	cursor: pointer;
+	&:hover {
+		color: #666;
+	}
+}
+
+.formModal{
+	background-color: rgba(0, 0, 0, 0.8);
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	display: none;
+	justify-content: center;
+	align-items: center;
+}
+
+.formField{
+	margin-top: 5px;
+	margin-bottom: 5px;
+	/*overflow: auto;*/
+	margin-left: auto;
+    margin-right: auto;
+}
+
+.requestResultDisplay{
+	background-color: white;
+	text-align: center;
+	margin: 10px;
+	position: relative;
+	border-radius: 4px;
+}
+
+.pageView{
+	width: 100%;
+	height: 100%;
+}
+
+.transactionListDisplay{
+	align-content: center;
+	text-align: center;
+	display: none;
+}
+
+#userAccountsToggleView{
+	width: 100%;
+	padding-top: 5px;
+	padding-bottom: 10px;
+}
+
+#accountsNavBar{
+	width: 100%;
+	height: 10%;
+}
+
+#userAccountOpenPosViews{
+	width: 100%;
+	height: 90%;
+	overflow: scroll;
+
+}
+
+.accountView{
+	display: none;
+	padding-left: 15px;
+	padding-right: 15px;
+	padding-top: 0px;
+	overflow-x: scroll;
+}
+
+.accountView{
+	overflow-y: scroll;
+}
+
+.accountViewTable, .accountViewTableHeader{
+	border: 1px solid black;
+	border-collapse: collapse;
+	margin: 20px auto;
+	overflow-x: scroll
+	white-space: nowrap;
+	text-align: center;
+}
+
+.accountViewTable{
+	position: relative;
+	min-width: 100%;
+}
+
+.accountViewTableHeader{
+	position: sticky;
+	top: 0;
+}
+
+.multiRowCellRow{
+	border: 1px solid black;
+	border-collapse: collapse;
+	margin: 0 auto;
+}
+
+.accountViewTableRow, .pmsContainerInstrumentOpenPos{
+	border: 3px solid black;
+	border-collapse: collapse;
+	white-space: nowrap;
+}
+
+.accountCloseViewTableRow{
+	border: 1px solid black;
+	border-collapse: collapse;
+	white-space: nowrap;
+}
+
+.accountViewTableCell{
+	/*width: 100%;*/
+	border: 1px solid black;
+	border-collapse: collapse;
+	white-space: nowrap;
+	padding: 5px;
+}
+
+.containerTypeRow{
+	padding: 8px;
+}
+
+.containerTransactions{
+	align-content: center;
+	padding: 10px;
+}
+
+.containerTransactionsTable{
+	width: 100%;
+}
+
+.containerTransactionsTable .containerTransactionsTableHeader{
+	margin: 0 auto;
+	border: 3px solid black;
+	border-collapse: collapse;
+	white-space: nowrap;
+	text-align: center;
+}
+
+.containerTransactionCell{
+	border: 1px solid black;
+	border-collapse: collapse;
+	white-space: nowrap;
+	padding: 5px;
+	text-align: center;
+}
+
+.containerTransactionRow{
+	border: 3px solid black;
+	border-collapse: collapse;
+	white-space: nowrap;
+}
+
+.modalFormContents{
+	width: 500px;
+	background-color: white;
+	text-align: center;
+	padding: 20px;
+	position: relative;
+	border-radius: 4px;	
+}
+
+.trackedInstrumentName{
+	text-align: left;
+	width: 50%;
+	padding-left: 15px;
+	/*padding-right: 0px;*/
+}
+
+.trackedInstrumentValue{
+	text-align: center;
+	width: 40%;
+}
+
+.trackedInstrumentDelete{
+	float: left;
+	width: 10%;
+	padding-left: 0px;
+	padding-right: 0px;
+}
+
+.deleteInstrumentBtn{
+	height: 70%;
+	width: 70%;
+	text-align: center;
+	padding: 0;
+}
+
+.watchlistInstrumentRow{
+	font-size: 14px;
+	border-collapse: collapse;
+	display: flex;
+	height: 7.5%;
+	text-align: center;
+	padding: 10px 0px;
+}
+
+#watchlistInstrumentDiv{
+	overflow-x: scroll;
+	overflow-y: scroll;
+}
+
+#kiteConnectLogin{
+	display: none;
+	text-align: center;
+	color: red;
+}
+
+.navbar{
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+
+.pmsOpenPos{
+	width: 100%;
+	padding: 10px;
+	overflow-x: scroll;
+}
+
+.containerUpdatableAttributeValue:hover{
+    background-color: rgb(211,211,211, 0.5);
+}
+
+.containerInfo{
+	width: 100%;
+	display: flex;
+}
+
+.containerInfoDiv{
+	width: 25%;
+	text-align: center;
+}
+
+#userContainerActions{
+	width: 100%;
+}
+
+#watchlistContainer, #optionChainContainer{
+	width: 25%;
+	height: 100%;
+	padding: 0px 5px;
+}
+
+#toggleSelectedWatchlistDiv {
+	height: 5%;
+	align-content: center;
+	text-align: center;
+}
+
+#watchlistInstrumentsDisplayDiv {
+	height: 90%;
+	overflow-y: scroll;
+}
+
+#addInstrumentToWatchlistDiv {
+	padding-top: 5px;
+	text-align: center;
+	height: 5%;
+}
+
+#profile{
+	flex: 0 0 auto;
+}
+
+#toggleWatchlistDisplay, #toggleOptionChainDisplay{
+	position: absolute;
+	left: 1px;
+	top: 20px;
+	width: 1.5%;
+	text-align: center;
+	padding: 0px;
+	z-index: 1
+}
+
+.toggleWatchlistDiv{
+	flex: 0 0 auto;
+}
+
+.activeWatchlistDiv{
+	padding-top: 10px;
+	display: flex;
+	flex-flow: column;
+}
+
+#watchlistInstrumentDiv{
+	overflow-y: scroll;
+	min-height: 0px;
+}
+
+.toggleHistUnbookedVisibility{
+	position: absolute;
+	color: black;
+	top: 0px;
+	right: 2px;
+}
+
+#watchlistAddInstrumentContainer{
+	flex: 0, 0, 30px;
+}
+
+.bookedProfitStartDateDiv{
+	float: right;
+	height: inherit;
+}
+
+.setContainersGroup{
+	float: right;
+	height: inherit;
+}
+
+#toggleOpenClosePosDisplay{
+	float: left;
+}
+
+.transactionListDisplayTable{
+	margin: 0 auto; 
+}
+
+#transactionListDisplay{
+	padding-top: 20px;
+}
+
+label{
+	padding-right: 5px; 
+}
+
+.select2-container--default .select2-results__option[aria-disabled=true] {
+    display: none;
+}
+
+#containerTypeSpecificTransactionDetails{
+	position: relative;
+}
+
+#accountsContainer{
+	width: 75%;
+	height: 100%;
+}
+
+#transaction_strategy_assign_field{
+	width:33%;
+	margin:10px auto;
+}
+
+.strategySpreadCloseBtn{
+	position: absolute;
+	top: 0px;
+	right: 16px;
+}
+
+.clearfix:after {
+    content: ".";
+    display: block;
+    clear: both;
+    visibility: hidden;
+    line-height: 0;
+    height: 0;
+}
+
+.clearfix {
+    display: inline-block;
+}
+
+html[xmlns] .clearfix {
+    display: block;
+}
+
+* html .clearfix {
+    height: 1%;
+}
+
+.optionChainSelectContainer{
+	width: 100%;
+	height: 5%;
+	text-align: center;
+}
+
+.optionChainDisplay{
+	height: 95%;
+	overflow-y: scroll;
+}
+
+.strikeRow{
+	display: flex;
+	width: 100%;
+}
+
+.strikeRowStrikeDiv, .strikeRowOptionDiv{
+	border: 1px solid black;
+	border-collapse: collapse;
+}
+
+.strikeRowStrikeDiv{
+	width: 20%;
+	text-align: center;
+}
+
+.strikeRowOptionDiv{
+	width: 40%;
+}
+
+.optionPropDiv{
+	padding: 0px 5px; 
+	display: flex;
+}
+
+.optionChainOptionPropLabel{
+	text-align: left;
+}
+
+.optionChainOptionPropVal{
+	text-align: right;
+}
+
+.strategyDiv{
+	width: 100%;
+	/*border: solid 0.5px grey;*/
+	margin-top: 30px;
+	padding: 5px 0px;
+	background-color: white;
+}
+
+.strategyDivHeader{
+	width: 100%;
+	display: flex;
+}
+
+.singleUnderlyingStrategyHeaderField{
+	width: 19%;
+}
+
+.toggleStratgyVisibiltyDiv{
+	width: 5%;
+}
+
+.singleUnderlyingStrategyHeaderField, .toggleStratgyVisibiltyDiv{
+	text-align: center;
+}
+
+.strategyContainersTableDiv{
+	width: 100%;
+	overflow-x: scroll;
+}
+
+.strategyTable{
+	border: 3px solid black;
+	border-collapse: collapse;
+	overflow-x: scroll
+	white-space: nowrap;
+	text-align: center;
+	position: relative;
+	min-width: 100%;
+}
+
+.strategyTableHeader{
+	text-align: center;
+	border: 3px solid black;
+	border-collapse: collapse;
+}
+
+.strategyTableCell{
+	border: 1px solid black;
+	border-collapse: collapse;
+	white-space: nowrap;
+	padding: 5px;
+}
+
+#derivativesUserViewContainer{
+	width: 100%;
+	height: 90%;
+	overflow-y: scroll;
+}
+
+#derivativesToggleUserDiv{
+	width: 100%;
+	height: 5%;
+}
+
+.derivativesUserView{
+	display: none;
+	width: 100%;
+	height: 100%;
+	overflow-y: scroll;
+	padding: 0px 7px;
+	background-color: rgba(119,136,153, 0.5);
+}
+
+#derivativesContainer{
+	height: 100%;
+	width: 100%;
+}
+
+.strategyReturnsGraphContainer{
+	width: 80%;
+	height: 100%;
+}
+
+.strategyReturnsTableContainer{
+	width: 20%;
+	overflow-y: scroll;
+	height: 100%;
+	padding: 5px;
+}
+
+.strategyReturnsTable{
+	width: 100%;
+	border: 1px solid black;
+	border-collapse: collapse;
+	margin: 0 auto;
+}
+
+.strategyReturnsTableCell{
+	text-align: center;
+	border: 1px solid black;
+	border-collapse: collapse;
+}
+
+.strategySpreadDisplayDiv{
+	width: 100%;
+	display: none;
+}
+
+#lendingContainer{
+	width: 100%;
+	height: 100%;
+	display: block;
+}
+
+.lendingToggleUserContainer{
+	width: 100%;
+	height: 5%;
+	text-align: center;
+}
+
+.ledingUserViewContainer{
+	width: 100%;
+	height: 95%;
+}
+
+.userLendingView{
+	width: 100%;
+	height: 100%;
+	text-align: center;
+	display: none;
+}
+
+.loanRow{
+	width: 100%;
+	display: flex;
+	padding: 5px;
+	border: 1px solid black;
+	border-collapse: collapse;
+}
+
+.loanRowCell{
+	width: 11.11%;
+	text-align: center;
+	padding: 0 auto;
+	vertical-align: middle;
+}
+
+.loanHeaderRow{
+	font-weight: bold;
+}
+
+.loanRowsContainer{
+	height: 85%;
+	overflow-y: scroll;
+}
+
+.loanPaymentsTableContainer{
+	display: none;
+	padding: 10px 30px;
+}
+
+.loanPaymentsTable, .loanPaymentsTableHeader{
+	border: 3px solid black;
+	border-collapse: collapse;
+	overflow-x: scroll
+	white-space: nowrap;
+	text-align: center;
+	position: relative;
+	min-width: 100%;
+}
+
+.loanPaymentTableCell{
+	border: 1px solid black;
+	border-collapse: collapse;
+	white-space: nowrap;
+	padding: 5px;
+}
+
+.headerRowContainer{
+	height: 7.5%;
+	width: 100%;
+	border: 1px solid black;
+	border-collapse: collapse;
+}
+
+.loanHeaderRow{
+	display: flex;
+}
+
+.loanPaymentTableTotalsRow{
+	font-weight: bold;
+}
+
+.loanPaymentHeaderCell{
+	text-align: center;
+	border: 3px solid black;
+	border-collapse: collapse;
+}
+
+.derivativesUserViewActionsBar{
+	height: 5%;
+	display: flex;
+}
+
+.derivativesUserViewActionsBarActionDiv{
+	height: 100%;
+	width: 33.33%;
+	text-align: center;
+}
+
+.userDerivativesFilter{
+	/*width: 30%;*/
+}
+
+#addTransactionsContainer{
+	width: 100%;
+	height: 100%;
+	text-align: center;
+}
+
+.containerGroupHeaderDiv, .containerGroupValueDiv, .bookedProfitHeaderDiv, .bookedProfitValueDiv{
+	width: 50%;
+	padding: 0px 5px;
+}
+
+#containerPageContainer{
+	width: 100%;
+	overflow: scroll;
+}

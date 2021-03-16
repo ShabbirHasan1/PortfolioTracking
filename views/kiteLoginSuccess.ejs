@@ -1,0 +1,17 @@
+<!-- views/profile.ejs -->
+<!doctype html>
+<html>
+	<head>
+		<title>Login Success</title>
+	</head>
+	<body>
+		<div>
+			<h4>You have successfully logged into Zerodha Kite, this tab will automatically close in 5 seconds</h4>
+		</div>
+		<script type="text/javascript">
+			document.addEventListener("DOMContentLoaded", function(e){
+				setTimeout(function(){window.close()}, 5000)
+			})
+		</script>
+	</body>
+</html>

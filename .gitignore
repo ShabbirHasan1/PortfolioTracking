@@ -1,0 +1,9 @@
+node_modules/
+Data/
+nodeTest.js
+config/auth.js
+PythonServer/pandasAPITesting.py
+PythonServer/pythonTesting.py
+PythonServer/dump.rdb
+dump.rdb
+Documentation/

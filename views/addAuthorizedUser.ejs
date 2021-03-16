@@ -1,0 +1,24 @@
+<!-- views/index.ejs -->
+<!doctype html>
+<html>
+<head>
+	<title>Add New User</title>
+	<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css"> <!-- load bootstrap css -->
+	<link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css"> <!-- load fontawesome -->
+</head>
+	<body>
+		<div class="container">
+			<%- include ('navbar.ejs') %>
+
+			<div class="jumbotron text-center">
+				<h2></span> Add an Authorized User</h2>
+				<form action="/addAuthorizedUser" method="post">
+					New User's email(must be a gmail account):<input type="text" name="email"><br>
+					Can this user own instruments? <input type="checkbox" name="isContainerOwner" value="isContainerOwner"><br>
+					 <input type="submit" value="Submit">
+				</form>
+			</div>
+
+		</div>
+	</body>
+</html>

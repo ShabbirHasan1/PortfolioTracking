@@ -1,0 +1,473 @@
+html, body {
+  height: 100%;
+  margin: 0;
+}
+
+#pageContainer {
+	display: flex;
+	flex-flow: column;
+	height: 100%;
+	overflow: scroll;
+}
+
+#navbarContainer{
+	flex: 0 0 auto;
+}
+
+#contentContainer{
+	/*height: 100%;*/
+	flex: 1 0 auto;
+}
+
+.test_modal {
+	background-color: rgba(0, 0, 0, 0.8);
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	display: none;
+	justify-content: center;
+	align-items: center;
+}
+
+.test_modal_contents {
+	height: 300px;
+	width: 500px;
+	background-color: white;
+	text-align: center;
+	padding: 20px;
+	position: relative;
+	border-radius: 4px;
+}
+
+.closeButton {
+	position: absolute;
+	top: 0;
+	right: 10px;
+	font-size: 30px;
+	color: #333;
+	transform: rotate(45deg);
+	cursor: pointer;
+	&:hover {
+		color: #666;
+	}
+}
+
+.formModal{
+	background-color: rgba(0, 0, 0, 0.8);
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	display: none;
+	justify-content: center;
+	align-items: center;
+}
+
+.formField{
+	margin-top: 5px;
+	margin-bottom: 5px;
+	/*overflow: auto;*/
+	margin-left: auto;
+    margin-right: auto;
+}
+
+/*.newContainerFormContents{
+	width: 500px;
+	background-color: white;
+	text-align: center;
+	padding: 20px;
+	position: relative;
+	border-radius: 4px;
+}*/
+
+.requestResultDisplay{
+	background-color: white;
+	text-align: center;
+	margin: 10px;
+	position: relative;
+	border-radius: 4px;
+}
+
+.pageView{
+	display: flex;
+	flex-flow: column;
+	height: 100%;
+	align-content: center;
+	text-align: center;
+	display: none;
+	width: 100%;
+	overflow: auto;
+}
+
+.transactionListDisplay{
+	align-content: center;
+	text-align: center;
+	display: none;
+}
+
+#userAccountsToggleView{
+	padding-top: 5px;
+	padding-bottom: 10px;
+}
+
+.accountView, .derivativesUserView{
+	display: none;
+	padding-left: 15px;
+	padding-right: 15px;
+	padding-top: 0px;
+	overflow-x: scroll;
+}
+
+.accountView{
+	overflow-y: scroll;
+}
+
+.accountViewTable, .accountViewTableHeader, .strategyTable, .strategyTableHeader{
+	border: 1px solid black;
+	border-collapse: collapse;
+	margin: 20px auto;
+	overflow-x: scroll
+	white-space: nowrap;
+	text-align: center;
+	/*width: auto;*/
+}
+
+.accountViewTableHeader, .strategyTableHeader{
+	position: relative;
+}
+
+.accountViewTable, .strategyTable{
+	width: 99%;
+}
+
+.multiRowCellRow{
+	border: 1px solid black;
+	border-collapse: collapse;
+	margin: 0 auto;
+}
+
+.accountViewTableRow, .pmsContainerInstrumentOpenPos, .strategyTableRow{
+	border: 3px solid black;
+	border-collapse: collapse;
+	white-space: nowrap;
+}
+
+.accountCloseViewTableRow{
+	border: 1px solid black;
+	border-collapse: collapse;
+	white-space: nowrap;
+}
+
+.accountViewTableCell, .strategyTableCell{
+	/*width: 100%;*/
+	border: 1px solid black;
+	border-collapse: collapse;
+	white-space: nowrap;
+	padding: 5px;
+}
+
+.containerTypeRow{
+	/*text-align: left;*/
+	padding: 8px;
+	/*line-height: auto*/
+}
+
+.containerTransactions{
+	align-content: center;
+}
+
+.containerTransactionsTable .containerTransactionsTableHeader{
+	margin: 0 auto; /* or margin: 0 auto 0 auto */
+	border: 3px solid black;
+	border-collapse: collapse;
+	white-space: nowrap;
+}
+
+.containerTransactionCell{
+	border: 1px solid black;
+	border-collapse: collapse;
+	white-space: nowrap;
+	padding: 5px;
+}
+
+.containerTransactionRow{
+	border: 3px solid black;
+	border-collapse: collapse;
+	white-space: nowrap;
+}
+
+.modalFormContents{
+	width: 500px;
+	background-color: white;
+	text-align: center;
+	padding: 20px;
+	position: relative;
+	border-radius: 4px;	
+}
+
+.trackedInstrumentName{
+	text-align: left;
+	width: 40%;
+	padding-left: 15px;
+	padding-right: 0px;
+}
+
+.trackedInstrumentValue{
+	resize: both;
+	text-align: center;
+	width: 45%;
+	padding-left: 5px;
+	padding-right: 0px;
+	font-size: 14px;
+}
+
+.trackedInstrumentDelete{
+	float: left;
+	/*width: 15%;*/
+	/*height: 60%;*/
+	padding-left: 0px;
+	padding-right: 0px;
+}
+
+.deleteInstrumentBtn{
+	height: 100%;
+	width: 70%;
+	text-align: center;
+	padding: 0;
+}
+
+.trackedInstrumentName .trackedInstrumentValue .trackedInstrumentDelete{
+	/*margin: 0;
+	position: absolute;
+	top: 50%;
+	-ms-transform: translateY(-50%);
+	transform: translateY(-50%);*/
+}
+
+.watchlistInstrumentRow{
+	border: 0.1px #D3D3D3;
+	border-collapse: collapse;
+	/*white-space: nowrap;*/
+	/*padding: 5px;*/
+	overflow: auto;
+	position: relative;
+	/*height: 10px*/
+	padding-top: 10px
+}
+
+#watchlistInstrumentDiv{
+	overflow-x: scroll;
+	overflow-y: scroll;
+}
+
+#kiteConnectLogin{
+	display: none;
+	text-align: center;
+	padding-top: 5px;
+	color: red;
+}
+
+.navbar{
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+
+.pmsOpenPos{
+	overflow-x: scroll;
+}
+
+.containerUpdatableAttributeValue:hover{
+    background-color: rgb(211,211,211, 0.5);
+}
+
+.containerInfo{
+	overflow: auto;
+}
+
+#userContainerActions{
+	align-content: center;
+	overflow: auto;
+}
+
+#watchlistContainer, #optionChainContainer{
+	padding-left: 0px;
+	padding-bottom: 10px;
+	padding-top: 10px;
+	padding-right: 0px;
+	height: 100%;
+	display: flex;
+	flex-flow: column;
+}
+
+#toggleSelectedWatchlistDiv {
+	flex: 0 0 20px;
+}
+
+#watchlistInstrumentsDisplayDiv {
+	padding-top: 10px;
+	flex: 1 1 auto;
+	overflow-y: scroll
+}
+
+#addInstrumentToWatchlistDiv {
+	flex: 0 0 30px;
+}
+
+#profile{
+	flex: 0 0 auto;
+}
+
+#toggleWatchlistDisplay, #toggleOptionChainDisplay{
+	position: absolute;
+	left: 1px;
+	width: 1.5%;
+	text-align: center;
+	padding: 0px;
+	z-index: 1
+}
+
+.toggleWatchlistDiv{
+	flex: 0 0 auto;
+}
+
+.activeWatchlistDiv{
+	/*flex: 0 0 auto;*/
+	padding-top: 10px;
+	display: flex;
+	flex-flow: column;
+}
+
+#watchlistInstrumentDiv{
+	/*flex: 1 1 auto;*/
+	overflow-y: scroll;
+	min-height: 0px;
+}
+
+.toggleHistUnbookedVisibility{
+	position: absolute;
+	color: black;
+	top: 0px;
+	right: 2px;
+}
+
+/*#watchlistInstrumentRowsContainer{
+	height: 100%;
+	overflow-y: scroll;
+}*/
+
+#watchlistAddInstrumentContainer{
+	/*position: absolute;
+	bottom: 0px*/
+	flex: 0, 0, 30px;
+}
+
+.bookedProfitStartDateDiv{
+	float: right;
+	height: inherit;
+}
+
+.setContainersGroup{
+	float: right;
+	height: inherit;
+}
+
+#toggleOpenClosePosDisplay{
+	float: left;
+}
+
+.transactionListDisplayTable{
+	margin: 0 auto; 
+}
+
+#transactionListDisplay{
+	padding-top: 20px;
+}
+
+label{
+	padding-right: 5px; 
+}
+
+.select2-container--default .select2-results__option[aria-disabled=true] {
+    display: none;
+}
+
+.derivativesUserView{
+	display: none;
+}
+
+.strategyDiv{
+	margin-top: 10px;
+	border: 0.5px solid lightgrey;
+	overflow: scroll;
+}
+
+#containerTypeSpecificTransactionDetails{
+	position: relative;
+}
+
+#accountsContainer{
+	overflow-y: scroll;
+	overflow-x: scroll;
+}
+
+#transaction_strategy_assign_field{
+	width:33%;
+	margin:10px auto;
+}
+
+.strategySpreadCloseBtn{
+	position: absolute;
+	top: 0px;
+	right: 16px;
+}
+
+.strategyDivHeader{
+}
+
+.clearfix:after {
+    content: ".";
+    display: block;
+    clear: both;
+    visibility: hidden;
+    line-height: 0;
+    height: 0;
+}
+
+.clearfix {
+    display: inline-block;
+}
+
+html[xmlns] .clearfix {
+    display: block;
+}
+
+* html .clearfix {
+    height: 1%;
+}
+
+.strikeRow{
+	display: table;
+	width: 100%;
+}
+
+.strikeRowStrikeDiv, .strikeRowOptionDiv{
+	border: 1px solid black;
+	border-collapse: collapse;
+	display: table-row;
+	padding: 0px;
+}
+
+.strikeRowStrikeDiv{
+	height: auto;
+	padding-right: 0px;
+	padding-left: 0px;
+}
+
+.optionChainOptionPropLabel{
+	text-align: left;
+}
+
+.optionChainOptionPropVal{
+	text-align: right;
+}

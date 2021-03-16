@@ -1,0 +1,133 @@
+<template id="userLendingViewTemplate">
+	<div class="userLendingView">
+		<div class="headerRowContainer">
+			<div class="loanHeaderRow">
+				<div class="loanRowCell">Name</div>
+				<div class="loanRowCell">End Date</div>
+				<div class="loanRowCell">Principal Outstanding</div>
+				<div class="loanRowCell">Interest Outstanding</div>
+				<div class="loanRowCell">Interest Earnings Outstanding</div>
+				<div class="loanRowCell">Principal Repaid</div>
+				<div class="loanRowCell">Interest Paid</div>
+				<div class="loanRowCell">Interest Earned</div>
+				<div class="loanRowCell">
+					<button class="btn btn-default btn-sm addLoanBtn">Add Loan</button>
+				</div>
+			</div>	
+		</div>
+		<div class="loanRowsContainer"></div>
+		<div class="headerRowContainer">
+			<div class="loanHeaderRow lendingUserTotalsRow">
+				<div class="loanRowCell">Total</div>
+				<div class="loanRowCell"></div>
+				<div class="loanRowCell"></div>
+				<div class="loanRowCell"></div>
+				<div class="loanRowCell"></div>
+				<div class="loanRowCell"></div>
+				<div class="loanRowCell"></div>
+				<div class="loanRowCell"></div>
+				<div class="loanRowCell"></div>
+			</div>	
+		</div>
+	</div>
+</template>
+
+<template id="loanRowTemplate">
+	<div class="loanRowContainer">
+		<div class="loanRow">
+			<div class="loanRowCell"></div>
+			<div class="loanRowCell"></div>
+			<div class="loanRowCell"></div>
+			<div class="loanRowCell"></div>
+			<div class="loanRowCell"></div>
+			<div class="loanRowCell"></div>
+			<div class="loanRowCell"></div>
+			<div class="loanRowCell"></div>
+			<div class="loanRowCell">
+				<button class="toggleLoanPaymentsVisibility btn btn-default btn-sm">+</button>
+			</div>
+		</div>
+		<div class="loanPaymentsTableContainer">
+			<table class="loanPaymentsTable">
+				<tr class="loanPaymentTableHeader">
+					<th class="loanPaymentHeaderCell">Date</th>
+					<th class="loanPaymentHeaderCell">Principal paid in</th>
+					<th class="loanPaymentHeaderCell">Principal outstanding for the month</th>
+					<th class="loanPaymentHeaderCell">Principal repayment</th>
+					<th class="loanPaymentHeaderCell">Interest Payment</th>
+					<th class="loanPaymentHeaderCell">Interest Payment (net of TDS)</th>
+					<th class="loanPaymentHeaderCell">Payout to investor</th>
+				</tr>
+			</table>
+		</div>
+	</div>
+</template>
+
+<template id="addLoanFormFieldsTemplate">
+	<div id="addLoanFormFields">
+		<div class="formField">
+			<select id="loanOwnerSelect" class="loanFormInput" name="ownerProfileID"></select>
+		</div>
+		<div class="formField">
+			Loan Name: <input type="text" class="loanFormInput" name="loanName" placeholder="Loan Name">
+		</div>
+		<div class="formField">
+			Start Date: <input type="date" class="loanFormInput" name="startDate">
+		</div>
+		<div class="formField">
+			End Date: <input type="date" class="loanFormInput" name="endDate">
+		</div>
+		<div class="formField">
+			Principal: <input type="number" class="loanFormInput" name="principal" min="1" step="1">
+		</div>
+		<div class="formField">
+			<select name="principalRepaymentType" class="loanFormInput">
+				<option disabled="disabled" value="" selected="true">-- Principal Repayment Type --</option>
+				<option value="Periodic">Periodic</option>
+				<option value="Bullet (start)">Bullet (Start)</option>
+				<option value="Bullet (End)">Bullet (End)</option>
+			</select>
+		</div>
+		<div class="formField" style="display: none;">
+			Principal Moratorium<input type="number" class="loanFormInput" name="principalMoratorium"> months
+		</div>
+		<div class="formField" style="display: none;">
+			Principal Repayment Frequency: <input type="number" class="loanFormInput" name="principalFrequency"> months
+		</div>
+		<div class="formField">
+			Interest Rate: <input type="number" class="loanFormInput" name="interestRate">% p.a.
+		</div>
+		<div class="formField">
+			<select name="interestRepaymentType" class="loanFormInput">
+				<option disabled="disabled" value="" selected="true">-- Interest Payment Type --</option>
+				<option value="Periodic">Periodic</option>
+				<option value="Bullet (start)">Bullet (Start)</option>
+				<option value="Bullet (End)">Bullet (End)</option>
+			</select>
+		</div>
+		<div class="formField" style="display: none;">
+			Interest Moratorium<input type="number" class="loanFormInput" name="interestMoratorium"> months
+		</div>
+		<div class="formField" style="display: none;">
+			Interest Repayment Frequency: <input type="number" class="loanFormInput" name="interestFrequency"> months
+		</div>
+		<div class="formField">
+			Tax Deductible at Source: <input type="number" class="loanFormInput" name="TDS">%
+		</div>
+		<div class="formField">
+			<button class="btn btn-default btn-sm" id="addLoanSubmitBtn">Submit</button>
+		</div>
+	</div>
+</template>
+
+<template id="loanPaymentTableRow">
+	<tr class="loanPaymentTableRow">
+		<td class="loanPaymentTableCell"></td>
+		<td class="loanPaymentTableCell"></td>
+		<td class="loanPaymentTableCell"></td>
+		<td class="loanPaymentTableCell"></td>
+		<td class="loanPaymentTableCell"></td>
+		<td class="loanPaymentTableCell"></td>
+		<td class="loanPaymentTableCell"></td>
+	</tr>
+</template>

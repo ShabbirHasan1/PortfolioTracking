@@ -1,0 +1,39 @@
+{
+  "name": "portfoliotracking",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lakshdang/ProtfolioTracking.git"
+  },
+  "author": "Laksh Dang",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/lakshdang/ProtfolioTracking/issues"
+  },
+  "homepage": "https://github.com/lakshdang/ProtfolioTracking#readme",
+  "dependencies": {
+    "axios": "latest",
+    "body-parser": "latest",
+    "connect-flash": "latest",
+    "connect-redis": "^5.0.0",
+    "cookie-parser": "latest",
+    "ejs": "latest",
+    "express": "^4.17.1",
+    "express-session": "latest",
+    "jstat": "^1.9.4",
+    "kiteconnect": "^3.1.0",
+    "morgan": "latest",
+    "node-schedule": "^1.3.2",
+    "passport": "latest",
+    "passport-google-oauth": "latest",
+    "passport.socketio": "^3.7.0",
+    "redis": "^3.0.2",
+    "request": "latest",
+    "socket.io": "^2.3.0"
+  }
+}
