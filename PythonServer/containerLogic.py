@@ -11,7 +11,7 @@ import groupLogic as group
 from pprint import pprint
 
 def getContainerTypesData(data):
-	ret_data = {"containerTypesData": appData.tables['containerTypes']}
+	ret_data = {"containerTypesData": appData.tables['containerTypes'].to_dict(orient="records")}
 	return ret_data
 
 def addPortfolio(data):
@@ -63,6 +63,7 @@ def createTempContainers(containerInfoDF):
 
 def getAllContainers(data):
 	container_df = appData.tables['containers']
+	# container_df['']
 	return {'containersInfo': container_df}
 
 def getContainersGroups(data):

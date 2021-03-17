@@ -5,6 +5,7 @@ module.exports = {
 	postRequest: function (path, data, callback){
 		axios.post(pythonDir+path, data)
 		.then(result=>{
+			console.log(typeof(result))
 			callback(null, result);
 		})
 		.catch(error=>{

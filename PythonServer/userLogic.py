@@ -4,7 +4,7 @@ import appData
 
 def getInstrumemntOwners(data):
 	users = appData.tables['users']
-	instrumentOwners = users.loc[users['isContainerOwner'].notnull()]
+	instrumentOwners = users.loc[users['isContainerOwner'].notnull()].drop(columns=['email']).to_dict(orient="records")
 	return {"instrumentOwners": instrumentOwners}
 
 def addAuthorizedUser(data):

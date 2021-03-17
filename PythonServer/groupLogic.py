@@ -28,7 +28,7 @@ def createGroup(data):
 	return ret_data
 
 def getAllGroups(data):
-	return {"groupsData": appData.tables['groups']}
+	return {"groupsData": appData.tables['groups'].to_dict(orient="records")}
 
 def getGroupByID(data):
 	groups = appData.tables['groups']
