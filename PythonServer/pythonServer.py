@@ -7,7 +7,8 @@ import sys
 import logging
 from pprint import pprint
 
-baseDir = '/Users/lakshdang/Documents/PortfolioTracking/Data/'
+# baseDir = '/Users/lakshdang/Documents/PortfolioTracking/Data/'
+baseDir = '../Data/'
 # print("starting python server", flush=True)
 appData.init(baseDir)
 
