@@ -22,7 +22,7 @@ module.exports = function(io, em){
 					console.log(typeof(pageData))
 					if(error)console.log(error);
 					let list = []
-					console.log(pageData)
+					console.log(util.inspect(pageData['strategies'], {showHidden: false, depth: null}))
 					dataVersionId = pageData.dataVersionId
 					let subscribedInstruments = pageData.subscribedInstruments
 					subscribedInstruments.forEach(function(instrument){

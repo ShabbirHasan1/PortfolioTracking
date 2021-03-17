@@ -63,7 +63,7 @@ def createTempContainers(containerInfoDF):
 
 def getAllContainers(data):
 	container_df = appData.tables['containers']
-	# container_df['']
+	# container_df['openDate']
 	return {'containersInfo': container_df}
 
 def getContainersGroups(data):
