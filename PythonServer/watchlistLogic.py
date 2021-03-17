@@ -171,6 +171,9 @@ def getAllWatchlistsWithInstruments(data):
 	watchlistInstrumentsInfo = watchlistInstrumentsInfo.groupby('watchlistID').agg(list)[['watchlistInstrumentInfo']]
 	temp = watchlists.set_index('watchlistID')
 	temp['instrumentInfo'] = watchlistInstrumentsInfo['watchlistInstrumentInfo']
-	temp.loc[temp['instrumentInfo'].isna(), 'instrumentInfo'] = np.empty((1, 0)).tolist()
+	temp['empty'] = [[]]*temp.shape[0]
+	temp.loc[temp['instrumentInfo'].isna(), 'instrumentInfo'] = temp['empty'];
+	temp = temp.drop(columns=['empty'])
+	pprint(temp)
 	return {"watchlists": temp.to_dict(orient="index")}
 
