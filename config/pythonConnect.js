@@ -9,6 +9,7 @@ module.exports = {
 			// console.log(typeof(result.data))
 			// if (typeof result.data === 'string' || result.data instanceof String)
 			// 	result.data = JSON.parse(result.data)
+			console.log(result.data)
 			callback(null, result);
 		})
 		.catch(error=>{
