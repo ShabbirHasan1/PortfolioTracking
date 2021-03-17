@@ -22,6 +22,7 @@ module.exports = function(io, em){
 					console.log(typeof(pageData))
 					if(error)console.log(error);
 					let list = []
+					console.log(pageData)
 					dataVersionId = pageData.dataVersionId
 					let subscribedInstruments = pageData.subscribedInstruments
 					subscribedInstruments.forEach(function(instrument){
