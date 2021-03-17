@@ -6,6 +6,9 @@ module.exports = {
 		axios.post(pythonDir+path, data)
 		.then(result=>{
 			console.log(typeof(result))
+			console.log(typeof(result.data))
+			if (typeof result.data === 'string' || result.data instanceof String)
+				result.data = JSON.parse(result.data)
 			callback(null, result);
 		})
 		.catch(error=>{
