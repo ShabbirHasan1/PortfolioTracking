@@ -1,5 +1,6 @@
 from http.server import HTTPServer, BaseHTTPRequestHandler
 import json
+import simplejson
 import routes
 import appData
 import helperFunctions as helper
@@ -21,7 +22,7 @@ class SimpleHTTPRequestHandler(BaseHTTPRequestHandler):
 		helper.jsonSerializeObject(retjson)
 		self.send_response(200)
 		self.end_headers()
-		self.wfile.write(json.dumps(retjson).encode())
+		self.wfile.write(simplejson.dumps(retjson, ignore_nan=True).encode())
 
 	def log_message(self, format, *args):
 		return
