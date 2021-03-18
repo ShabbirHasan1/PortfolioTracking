@@ -117,6 +117,7 @@ def removeInstrumentFromWatchlist(data):
 	if(watchlistInstrumentNotExists): return {"error": "Selected instrument not tracked in selected watchlist"}
 	
 	watchlistInstruments = watchlistInstruments.loc[~watchlistInstrumentsSelector]
+	appData.tables['watchlistInstruments'] = watchlistInstruments;
 	
 	if(appData.saveChanges): 
 		watchlistInstruments.to_json(appData.baseDir+"watchlistInstruments.json", orient="split")

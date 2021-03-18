@@ -26,7 +26,6 @@ def createStrategy(data):
 	strategies = strategies.append([strategyObj], ignore_index=True)
 	appData.tables['strategies'] = strategies
 	if(appData.saveChanges): strategies.to_json(appData.baseDir+'strategies.json', orient="split")
-	print(strategies)
 	appData.updatedInfoObject['addedStrategy'] = strategyObj
 	return {"error": False, "addedStrategy": strategyObj}
 
@@ -121,25 +120,17 @@ def createNewContainerOwnerUnassignedStrategy(userID):
 def getStrategiesInfoObj():
 	strategies = appData.tables['strategies']
 	strategyContainers = appData.tables['strategyContainers'].copy()
-	# pprint(strategyContainers.loc[strategyContainers['customOpenPrice'].isna()])
-	# pprint("==================")
 	strategyContainers['empty'] = [None] * strategyContainers.shape[0]
 	strategyContainers.loc[strategyContainers['customOpenPrice'].isna(), 'customOpenPrice'] = strategyContainers['empty']
 	strategyContainers.loc[strategyContainers['customClosePrice'].isna(), 'customClosePrice'] = strategyContainers['empty']
 	strategyContainers = strategyContainers.drop(columns=['empty'])
-	pprint(strategyContainers)
-	pprint("==================")
 	strategyContainers['info'] = strategyContainers.to_dict(orient="records")
-	# pprint(strategyContainers['info'].loc[0])
-	# pprint("==================")
-	# pprint(strategyContainers)
 	strategyContainers = strategyContainers.groupby('strategyID')['info'].agg(list)
 	strategies = strategies.set_index('strategyID')
 	strategies['containers'] = strategyContainers
 	strategies.loc[strategies['containers'].isna(), 'containers'] = None
 	strategies.loc[strategies['strategyUnderlyingInstrument'].isna(), 'strategyUnderlyingInstrument'] = None
 	strategies = strategies.to_dict(orient="index")
-	# pprint(strategies)
 	return {"strategies": strategies}
 	
 def getStrategySpreadData(data):
@@ -284,7 +275,6 @@ def calcStrategyExpectedReturnsSpreadOnDate(strategyID, date):
 	currStrategyContainers['profit'] = (currStrategyContainers['expectedPrice'] - currStrategyContainers['openPrice'])*currStrategyContainers['openVolume']
 	currStrategyContainers.loc[currStrategyContainers['buy_sell_type']=="Sell", "profit"] = currStrategyContainers['profit']*-1
 	returns = currStrategyContainers[['underlyingPrice', 'profit']].groupby('underlyingPrice')['profit'].agg(sum).round(2)
-	pprint(returns)
 	ret = {"underlyingPrice": returns.index.tolist(), "profit": returns.tolist()}
 	return ret
 

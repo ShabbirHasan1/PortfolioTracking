@@ -35,7 +35,6 @@ def setInstruments():
 	instruments.loc[instruments['expiry']<today, 'delisted'] = True
 	instruments.loc[instruments['instrument_token'].isin(set(instruments['underlyingInstrument'])), 'isUnderlyingInstrument'] = True
 	appData.tables['instruments'] = instruments
-	pprint(instruments.columns)
 
 def getEQInstruments(data):
 	eq_instruments = (appData.tables['eq_instruments'][['instrument_token', 'tradingsymbol', 'name', 'exchange', 'expiry', 'lot_size', 'delisted']]).astype({"instrument_token": str})
