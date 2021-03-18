@@ -120,10 +120,6 @@ def createNewContainerOwnerUnassignedStrategy(userID):
 def getStrategiesInfoObj():
 	strategies = appData.tables['strategies']
 	strategyContainers = appData.tables['strategyContainers'].copy()
-	strategyContainers['empty'] = [None] * strategyContainers.shape[0]
-	strategyContainers.loc[strategyContainers['customOpenPrice'].isna(), 'customOpenPrice'] = strategyContainers['empty']
-	strategyContainers.loc[strategyContainers['customClosePrice'].isna(), 'customClosePrice'] = strategyContainers['empty']
-	strategyContainers = strategyContainers.drop(columns=['empty'])
 	strategyContainers['info'] = strategyContainers.to_dict(orient="records")
 	strategyContainers = strategyContainers.groupby('strategyID')['info'].agg(list)
 	strategies = strategies.set_index('strategyID')
