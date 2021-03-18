@@ -174,6 +174,5 @@ def getAllWatchlistsWithInstruments(data):
 	temp['empty'] = [[]]*temp.shape[0]
 	temp.loc[temp['instrumentInfo'].isna(), 'instrumentInfo'] = temp['empty'];
 	temp = temp.drop(columns=['empty'])
-	pprint(temp)
 	return {"watchlists": temp.to_dict(orient="index")}
 
