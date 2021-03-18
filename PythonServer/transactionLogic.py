@@ -87,6 +87,7 @@ def addTransactions(newTransactionDF, strategyAssignDF):
 	strategy.updateStrategyContainers(assignStrategyVol['updatedStrategyContainerVolumes'])
 	ret_data['addedTransaction'] = True
 	ret_data["error"] = False
+	pprint(appData.updatedInfoObject)
 	return ret_data
 
 def validateAndProcessNewTransactions(newTransactionDF):

@@ -21,6 +21,7 @@ module.exports = function(socket, em){
 
 	socket.on('addTransactionsAjax', function(data, callback){
 		pythonConnect.postRequest('/addTransactions', data, function(error, result){
+			if(error)console.log(error);
 			if(error)return callback("Backend Error");
 			let resData = result.data
 			let addedSubscribedInstruments = resData.addedInstruments
