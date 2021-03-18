@@ -121,6 +121,8 @@ def createNewContainerOwnerUnassignedStrategy(userID):
 def getStrategiesInfoObj():
 	strategies = appData.tables['strategies']
 	strategyContainers = appData.tables['strategyContainers'].copy()
+	pprint(strategyContainers.loc[strategyContainers['customOpenPrice'].isna()])
+	pprint("==================")
 	strategyContainers.loc[strategyContainers['customOpenPrice'].isna(), 'customOpenPrice'] = None
 	strategyContainers.loc[strategyContainers['customClosePrice'].isna(), 'customClosePrice'] = None
 	pprint(strategyContainers)
