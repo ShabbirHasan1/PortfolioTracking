@@ -123,10 +123,12 @@ def getStrategiesInfoObj():
 	strategyContainers = appData.tables['strategyContainers'].copy().drop(columns=['customOpenPrice', 'customClosePrice'])
 	# pprint(strategyContainers.loc[strategyContainers['customOpenPrice'].isna()])
 	# pprint("==================")
-	# strategyContainers.loc[strategyContainers['customOpenPrice'].isna(), 'customOpenPrice'] = None
-	# strategyContainers.loc[strategyContainers['customClosePrice'].isna(), 'customClosePrice'] = None
-	# pprint(strategyContainers)
-	# pprint("==================")
+	strategyContainers['empty'] = [None] * strategyContainers.shape[0]
+	strategyContainers.loc[strategyContainers['customOpenPrice'].isna(), 'customOpenPrice'] = strategyContainers['empty']
+	strategyContainers.loc[strategyContainers['customClosePrice'].isna(), 'customClosePrice'] = strategyContainers['empty']
+	strategyContainers = strategyContainers.drop(columns=['empty'])
+	pprint(strategyContainers)
+	pprint("==================")
 	strategyContainers['info'] = strategyContainers.to_dict(orient="records")
 	# pprint(strategyContainers['info'].loc[0])
 	# pprint("==================")
