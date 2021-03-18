@@ -120,16 +120,16 @@ def createNewContainerOwnerUnassignedStrategy(userID):
 
 def getStrategiesInfoObj():
 	strategies = appData.tables['strategies']
-	strategyContainers = appData.tables['strategyContainers'].copy()
-	pprint(strategyContainers.loc[strategyContainers['customOpenPrice'].isna()])
-	pprint("==================")
-	strategyContainers.loc[strategyContainers['customOpenPrice'].isna(), 'customOpenPrice'] = None
-	strategyContainers.loc[strategyContainers['customClosePrice'].isna(), 'customClosePrice'] = None
-	pprint(strategyContainers)
-	pprint("==================")
+	strategyContainers = appData.tables['strategyContainers'].copy().drop(columns=['customOpenPrice', 'customClosePrice'])
+	# pprint(strategyContainers.loc[strategyContainers['customOpenPrice'].isna()])
+	# pprint("==================")
+	# strategyContainers.loc[strategyContainers['customOpenPrice'].isna(), 'customOpenPrice'] = None
+	# strategyContainers.loc[strategyContainers['customClosePrice'].isna(), 'customClosePrice'] = None
+	# pprint(strategyContainers)
+	# pprint("==================")
 	strategyContainers['info'] = strategyContainers.to_dict(orient="records")
-	pprint(strategyContainers['info'].loc[0])
-	pprint("==================")
+	# pprint(strategyContainers['info'].loc[0])
+	# pprint("==================")
 	# pprint(strategyContainers)
 	strategyContainers = strategyContainers.groupby('strategyID')['info'].agg(list)
 	strategies = strategies.set_index('strategyID')
@@ -137,7 +137,7 @@ def getStrategiesInfoObj():
 	strategies.loc[strategies['containers'].isna(), 'containers'] = None
 	strategies.loc[strategies['strategyUnderlyingInstrument'].isna(), 'strategyUnderlyingInstrument'] = None
 	strategies = strategies.to_dict(orient="index")
-	pprint(strategies)
+	# pprint(strategies)
 	return {"strategies": strategies}
 	
 def getStrategySpreadData(data):
