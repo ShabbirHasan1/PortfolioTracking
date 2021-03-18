@@ -124,13 +124,15 @@ def getStrategiesInfoObj():
 	strategyContainers.loc[strategyContainers['customOpenPrice'].isna(), 'customOpenPrice'] = None
 	strategyContainers.loc[strategyContainers['customClosePrice'].isna(), 'customClosePrice'] = None
 	strategyContainers['info'] = strategyContainers.to_dict(orient="records")
+	pprint(strategyContainers['info'])
+	# pprint(strategyContainers)
 	strategyContainers = strategyContainers.groupby('strategyID')['info'].agg(list)
 	strategies = strategies.set_index('strategyID')
 	strategies['containers'] = strategyContainers
 	strategies.loc[strategies['containers'].isna(), 'containers'] = None
 	strategies.loc[strategies['strategyUnderlyingInstrument'].isna(), 'strategyUnderlyingInstrument'] = None
-	pprint(strategies)
 	strategies = strategies.to_dict(orient="index")
+	pprint(strategies)
 	return {"strategies": strategies}
 	
 def getStrategySpreadData(data):
